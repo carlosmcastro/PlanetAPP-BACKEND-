@@ -1,0 +1,17 @@
+¿Qué es la Temperatura de Equilibrio Planetario?
+Es la temperatura estimada por la radiación estelar incidente en un planeta. No puede tomarse como un mínimo o un máximo, sino como un parámetro. 
+
+"Entonces: ¿Cuál es la temperatura real?"
+
+Es una medida algo más compleja, la temperatura de un planeta no depende sólo de la radiación estelar. Esta temperatura puede variar, dependiendo de si el planeta tiene atmósfera o no, o de la desintegración radiactiva del núcleo en el interior del planeta.
+
+Esto significa que necesitamos más datos y mediciones. La investigación implica paciencia y observación.
+	
+El planeta con la temperatura de equilibrio más baja se llama OGLE-2005-BLG-390L b y es aprox. 50.0 Kelvins.
+El planeta con la temperatura de equilibrio más alta se llama KELT-9 b y es aprox. 4050.0 Kelvins.
+
+Un ejemplo de una estructura planetaria: 
+
+Las capas de los caparazones esfericos terrestres pueden dividirse (por diferencia de densidad), una corteza exterior sólida de silicato, una astenosfera y un manto altamente viscosos, un núcleo exterior líquido mucho menos viscoso que el manto y un núcleo interior sólido.
+
+Más allá de todas las apariencias, los caparazones no son perfectos, sino que tienen juntas irregulares. Pero clasificar siempre es útil para tratar de entender nuestra realidad.

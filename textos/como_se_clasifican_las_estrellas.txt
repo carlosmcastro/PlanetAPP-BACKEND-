@@ -1,0 +1,12 @@
+¿Cómo se clasifican las estrellas (Tipo Espectral)?
+Los astrónomos clasifican las estrellas en función de sus características espectrales, que proporcionan información sobre la temperatura en sus superficies (Temperatura efectiva).
+
+El método consiste en analizar la luz de las estrellas a través de redes de difracción. Los fotones entrantes se dividen en un espectro de colores. Cada uno de estos valores muestra la presencia de un elemento químico, cuya excitación se produce a un cierto grado de temperatura.
+
+Algunas letras del alfabeto relativas a cada nivel de calor se han utilizado para hacer la descripción estelar: O, B, A, F, G, K y M, en orden descendente. Las estrellas O serían las más calientes, las M las más frías. Pero también hay una clasificación no formal que asocia colores a estas estrellas. Así, las estrellas O se les llama estrellas azules; B, azules-blancas; A, blancas; F, amarillas-blancas; G, amarillas; K, naranjas, y M, rojas; aunque estos nombres no se refieren necesariamente a tonalidades visibles.
+
+El método más actualizado para clasificar las estrellas se llama el sistema Morgan-Keenan. Añade un rango numérico -entre 0 y 9- entre los espectros de cada letra nominal. A5 sería 5 décimas entre A0 y F0, el mismo principio de fraccionamiento numérico, que permite una mayor exactitud en los valores espectrales.
+
+Los astrónomos también incluyen en este sistema la luminosidad de las estrellas, expresada por números romanos: I, II, III, IV y V. Estos valores indican el ancho de las bandas de absorción del espectro, que a su vez se refiere al tamaño de estas estrellas. La clase I son las supergigantes; la clase III, las gigantes; V son las enanas o estrellas de secuencia principal.
+
+El espectro del Sol sería G2V, que se leería como una estrella amarilla de secuencia principal, dos décimas de la estrella naranja.

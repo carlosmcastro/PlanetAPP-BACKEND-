@@ -1,0 +1,11 @@
+La convención de nombres para exoplanetas:
+En el caso de exoplanetas que orbitan alrededor de una sola estrella, la designación se da normalmente tomando el nombre de su estrella madre y añadiendo una letra minúscula.
+
+"Entiendo, entiendo, pero ¿cómo se nombran las estrellas? ¿De dónde vienen esos nombres confusos?" 
+
+Es una pregunta valida, y la respuesta es un poco más laboriosa, depende del "catálogo".
+
+Los catálogos más comunes son:
+Histoire Céleste Française, Bonner Durchmusterung, Henry Draper Catalogue, Bright Star Catalogue, etcétera.
+
+Algunos nombres están determinados por la "Misión" que encontró la estrella o que estudia su sistema con frecuencia.
