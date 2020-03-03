@@ -12,9 +12,9 @@ def update():
 	data=pd.read_csv('astronomical_data.csv')
 	#Data from binary stellar systems have been cleaned.
 	data=data.drop(data.loc[data['pl_cbflag']==1].index)
-	txt_din = [i for i in os.listdir(txt_dinamic) if '.pickle' in i]
+	txt_pickle = [i for i in os.listdir(txt_dinamic) if '.pickle' in i]
 
-	for t in txt_din:
+	for t in txt_pickle:
 		with open(f'{txt_dinamic}/{t}', 'rb') as f:
 			texto_mapa = pickle.load(f)
 		texto_calculos = eval(texto_mapa['constantes'])
