@@ -1,7 +1,5 @@
 #encoding: utf-8
-import os, pickle
-import pandas as pd
-import hashlib
+import os, pickle, hashlib, pandas as pd
 from urllib.request import urlopen
 
 data=pd.read_csv('astronomical_data.csv')
