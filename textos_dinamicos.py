@@ -26,17 +26,29 @@ def update():
 def calidad(legi, direc):
 	import hashlib 
 	from urllib.request import urlopen
+	from urllib.error import HTTPError, URLError
 	
 	raw = "https://github.com/carlosmcastro/PlanetAPP-BACKEND-/blob/master/{}?raw=true"
 	legi = f"{direc}/{legi}"
 	
-	with urlopen(raw.format(legi)) as response:
-		hashes = pickle.loads(response.read())
+	#lectura de hashes.
+	try:
+		with urlopen(raw.format(legi)) as response:
+			hashes = pickle.loads(response.read())
+	except HTTPError as H:
+		return {'Error': H}
+	except URLError as U:
+		return {'Error': U}
 		
 	def escribir_(d_arch):
-		with urlopen(raw.format(d_arch)) as response:
-			with open(d_arch, "wb") as f:
-				f.write(response.read())
+		try:
+			with urlopen(raw.format(d_arch)) as response:
+				with open(d_arch, "wb") as f:
+					f.write(response.read())
+		except HTTPError as H:
+			return {'Error': H}
+		except URLError as U:
+			return {'Error': U}
 				
 	def hash_comp(d_arch):
 		m=hashlib.md5()
@@ -54,5 +66,11 @@ def calidad(legi, direc):
 	
 #legitimidad de los archivos internos.
 def legitimidad():
-	calidad('legitimidad_textos.dat', TXT_STATIC)
-	calidad('legitimidad_textos_variables.dat', TXT_DINAMIC)
+	txt_stc_error = calidad('legitimidad_textos.dat', TXT_STATIC)
+	txt_din_error = calidad('legitimidad_textos_variables.dat', TXT_DINAMIC)
+	
+	#si alguno retorna un valor distinto de None, retorna el error.
+	if txt_stc_error:
+		return "Ha fallado la verificación de textos estaticos.", txt_stc_error
+	if txt_din_error:
+		return "Ha fallado la verificación de textos dinamicos.", txt_din_error
