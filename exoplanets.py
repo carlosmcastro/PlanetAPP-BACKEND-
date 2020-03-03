@@ -26,6 +26,8 @@ from urllib.error import HTTPError, URLError
 import pickle, json
 
 api="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?" #Parametro obligatorio.
+astro_data = "astronomical_data.csv"
+tablas_ref = "data.pickle"
 
 #tabla de Planetas confirmados (Obligatorio)
 #tablea: (columnas)
@@ -129,7 +131,7 @@ def concor(nombre, nombres_t):
 	
 #Para evitar la costosa importación de pandas para unicamente una conversión.
 def json_csv(json_arch):
-	with open('astronomical_data.csv', "w") as f:
+	with open(astro_data, "w") as f:
 		#Encabezado.
 		f.write(",".join(json_arch[0].keys())+"\n")
 		#Datos linea a linea.
@@ -166,10 +168,10 @@ def get(tabla, num, *args):
 def update(datexo=None):
 	#deserializa la lista con pickle por defecto si existe. En caso contrario lo serializa.
 	if datexo:
-		with open('data.pickle', 'wb') as file_reference_data:
+		with open(tablas_ref, 'wb') as file_reference_data:
 			pickle.dump(datexo, file_reference_data)
 	else:
-		with open('data.pickle', 'rb') as file_reference_data:
+		with open(tablas_ref, 'rb') as file_reference_data:
 			datexo=pickle.load(file_reference_data)
 	
 	#descarga los datos exigidos.
