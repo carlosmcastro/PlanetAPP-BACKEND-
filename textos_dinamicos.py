@@ -1,24 +1,24 @@
 #encoding: utf-8
+
+#Directorios de textos y tabla de datos astronomicos.
+from container_constantes import TXT_STATIC, TXT_DINAMIC, ASTRO_DATA
 import os, pickle
 
-#Directorios con los textos.
-txt_static = 'textos'
-txt_dinamic = 'textos_variables'
 
 #en base a los archivos en la carpeta de texto variable, actualiza los textos correspondientes.
 def update():
 	import pandas as pd
 
-	data=pd.read_csv('astronomical_data.csv')
+	data=pd.read_csv(ASTRO_DATA)
 	#Data from binary stellar systems have been cleaned.
 	data=data.drop(data.loc[data['pl_cbflag']==1].index)
-	txt_pickle = [i for i in os.listdir(txt_dinamic) if '.pickle' in i]
+	txt_pickle = [i for i in os.listdir(TXT_DINAMIC) if '.pickle' in i]
 
 	for t in txt_pickle:
-		with open(f'{txt_dinamic}/{t}', 'rb') as f:
+		with open(f'{TXT_DINAMIC}/{t}', 'rb') as f:
 			texto_mapa = pickle.load(f)
 		texto_calculos = eval(texto_mapa['constantes'])
-		with open(f'{txt_static}/{t.replace("pickle", "txt")}', "w", encoding = "utf-8") as f:
+		with open(f'{TXT_STATIC}/{t.replace("pickle", "txt")}', "w", encoding = "utf-8") as f:
 			f.write(texto_mapa['titulo']+'\n')
 			f.write(texto_mapa['contenido'].format(*eval(texto_mapa['variables'].format(*[f'texto_calculos[{i}]' for i, u in enumerate(texto_calculos)]))))
 			
@@ -54,5 +54,5 @@ def calidad(legi, direc):
 	
 #legitimidad de los archivos internos.
 def legitimidad():
-	calidad('legitimidad_textos.dat', txt_static)
-	calidad('legitimidad_textos_variables.dat', txt_dinamic)
+	calidad('legitimidad_textos.dat', TXT_STATIC)
+	calidad('legitimidad_textos_variables.dat', TXT_DINAMIC)
