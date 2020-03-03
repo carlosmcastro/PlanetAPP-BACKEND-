@@ -1,24 +1,32 @@
 #encoding: utf-8
-import os, pickle, hashlib, pandas as pd
-from urllib.request import urlopen
+import os, pickle
 
-data=pd.read_csv('astronomical_data.csv')
-#Data from binary stellar systems have been cleaned.
-data=data.drop(data.loc[data['pl_cbflag']==1].index)
+#Directorios con los textos.
+txt_static = 'textos'
+txt_dinamic = 'textos_variables'
 
 #en base a los archivos en la carpeta de texto variable, actualiza los textos correspondientes.
 def update():
-	txt_din = [i for i in os.listdir('textos_variables') if '.pickle' in i]
+	import pandas as pd
+
+	data=pd.read_csv('astronomical_data.csv')
+	#Data from binary stellar systems have been cleaned.
+	data=data.drop(data.loc[data['pl_cbflag']==1].index)
+	txt_din = [i for i in os.listdir(txt_dinamic) if '.pickle' in i]
+
 	for t in txt_din:
-		with open(f'textos_variables/{t}', 'rb') as f:
+		with open(f'{txt_dinamic}/{t}', 'rb') as f:
 			texto_mapa = pickle.load(f)
 		texto_calculos = eval(texto_mapa['constantes'])
-		with open(f'textos/{t.replace("pickle", "txt")}', "w", encoding = "utf-8") as f:
+		with open(f'{txt_static}/{t.replace("pickle", "txt")}', "w", encoding = "utf-8") as f:
 			f.write(texto_mapa['titulo']+'\n')
 			f.write(texto_mapa['contenido'].format(*eval(texto_mapa['variables'].format(*[f'texto_calculos[{i}]' for i, u in enumerate(texto_calculos)]))))
 			
 #comprueba si los archivos estan disponibles y si no estan corruptos.
 def calidad(legi, direc):
+	import hashlib 
+	from urllib.request import urlopen
+	
 	raw = "https://github.com/carlosmcastro/PlanetAPP-BACKEND-/blob/master/{}?raw=true"
 	legi = f"{direc}/{legi}"
 	
@@ -46,5 +54,5 @@ def calidad(legi, direc):
 	
 #legitimidad de los archivos internos.
 def legitimidad():
-	calidad('legitimidad_textos.dat', 'textos')
-	calidad('legitimidad_textos_variables.dat', 'textos_variables')
+	calidad('legitimidad_textos.dat', txt_static)
+	calidad('legitimidad_textos_variables.dat', txt_dinamic)
