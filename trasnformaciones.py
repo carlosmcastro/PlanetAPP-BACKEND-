@@ -9,7 +9,7 @@ from container_constantes import MORGAN_KENNAN, EQUIVALENCIAS
 def coloquial_mk(morgank):		
 	letras_Mk = [MORGAN_KENNAN['letras'][i] for i in set(morgank).intersection(MORGAN_KENNAN['letras'])]
 	num_romanos = [MORGAN_KENNAN['numeros'][u] for u in ''.join([i if i in 'IV' else " " for i in morgank]).split()]
-	return [morgank, " ".join(letras_Mk+num_romanos)]
+	return [morgank, " ".join(letras_Mk+num_romanos)] #[Notación_formal, En_lenguaje_común]
 			
 
 			
