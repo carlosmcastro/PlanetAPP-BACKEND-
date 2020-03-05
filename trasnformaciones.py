@@ -27,8 +27,9 @@ def lum10(lsunlog):
 #Calculo de zona habitable.
 #Limite inferior, limite superior y ancho.
 def chz(stlum):
-	limite_interno = D(str(stlumn).sqrt()*0.75	#UA
-	limite_externo = D(str(stlumn).sqrt()*1.77	#UA
+	K_lum = D(str(stlum)).sqrt()
+	limite_interno = K_lum*D('0.75')	#UA
+	limite_externo = K_lum*D('1.77')	#UA
 	return [limite_interno, limite_externo, limite_externo-limite_interno]			
 
 			
