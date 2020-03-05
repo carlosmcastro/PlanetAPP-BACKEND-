@@ -124,3 +124,5 @@ MORGAN_KENNAN = {'letras': {'W': "Wolf–Rayet",
 							'III': "regular-giant",
 							'II': "bright-giant",
 							'I': "supergiant"}}
+							
+TEMPERATURA_SOLAR = '5778' #Kelvins
