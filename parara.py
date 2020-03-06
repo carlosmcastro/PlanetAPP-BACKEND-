@@ -15,7 +15,7 @@ data.drop(data[data['pl_cbflag']==1].index, inplace = True)
 #b:radio
 def dens(t, a, b):
 	f =  D(str(a))*D(str(b))**-3*CONST_DMR[t][0]
-	return f.scaleb(CONST_DMR[t][1])	##gr/cm**3
+	return f.scaleb(CONST_DMR[t][1])	#gr/cm**3
 	
 #a:densidad
 #b:radio
