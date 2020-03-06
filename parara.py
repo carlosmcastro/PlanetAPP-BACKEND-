@@ -21,14 +21,14 @@ def dens(t, a, b):
 #b:radio
 def mass(t, a, b):
 	f = (D(str(a))*D(str(b))**3)/CONST_DMR[t][0]
-	return f.scaleb(-CONST_DMR[t][1])	#masa en masas de jupiter.
+	return f.scaleb(-CONST_DMR[t][1])	#masa en masas solares/de jupiter.
 	
 
 #a:densidad
 #b:masa
 def radio(t, a, b):
 	f = ((D(str(b))*CONST_DMR[t][0])/D(str(a)))**(D(1)/D(3))
-	return f.scaleb(CONST_DMR[t][1]//3)	#radio en radios terrestres.
+	return f.scaleb(CONST_DMR[t][1]//3)	#radio en radios solares/terrestres.
 
 
 	
