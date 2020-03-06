@@ -1,5 +1,7 @@
 #encoding: utf-8
 #Constantes de las variables.
+from decimal import Decimal as D
+from math import pi
 
 API_EXOPLANETAS="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?" #Parametro obligatorio.
 ASTRO_DATA = "astronomical_data.csv"
@@ -126,3 +128,13 @@ MORGAN_KENNAN = {'letras': {'W': "Wolf–Rayet",
 							'I': "supergiant"}}
 							
 TEMPERATURA_SOLAR = '5778' #Kelvins
+
+#Datos basado en cambios de unidades a kg, y m.
+CONSTANTE_VOLUMEN_INV = D(3/4)/D(str(pi))
+TYP_DATOS = ('Estrella', 'Planeta')
+MANTISA_MASA = ('1.989', '1.898')	#Sol, Jupiter.
+MANTISA_RADIO = ('6.957', '6.371')	#Sol, Tierra.
+ORDEN_MAG = (3,6)
+# 'TIPO_DE_DATO':(OPERACION_RESIDUAL_DE_CAMBIOS_DE_UNIDADES, ORDEN_DE_ESCALA)
+CONST_DMR = {i: ((D(u)/D(v)**3)*CONSTANTE_VOLUMEN_INV, w)
+		for i, u, v, w in zip(TYP_DATOS, MANTISA_MASA, MANTISA_RADIO, ORDEN_MAG)}
