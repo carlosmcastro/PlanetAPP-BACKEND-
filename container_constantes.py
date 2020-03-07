@@ -6,6 +6,7 @@ from math import pi
 API_EXOPLANETAS="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?" #Parametro obligatorio.
 ASTRO_DATA = "astronomical_data.csv"
 TABLAS_REF = "data.pickle"
+LIMITES_PL_REALISTA = "limit_realistic_planet.pickle"
 
 #tabla de Planetas confirmados (Obligatorio)
 #'tabla': (columnas)
