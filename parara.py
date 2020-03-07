@@ -45,6 +45,7 @@ def rellenar_phy_nan():
 	data_.to_csv(ASTRO_DATA, index=False)	#Se guarda sin indices.
 	
 #Busca los datos necesarios para evaluar los intervalos limitantes de masa y radio.
+#La proporcional_masa, se fundamenta en el cociente minimo y maximo de cada planeta con su estrella.
 def limites():
 		c_st_pl = data[EQV['masa_planeta']]/ data[EQV['masa_estrella']]
 		

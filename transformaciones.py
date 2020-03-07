@@ -74,6 +74,7 @@ def interval(t, masa=[], aux_mass=[]):
 		tmass_max = nel[t]['proporcional_masa'][1]*aux_mass
 		return max(nel[t]['masa'][0], tmass_min), min(nel[t]['masa'][1], tmass_max)
 	if masa:
+		#recordar que la densidad es inversamente proporcional al radio.
 		trad_min = radio(t, nel[t]['densidad'][1], masa)
 		trad_max = radio(t, nel[t]['densidad'][0], masa)
 		return max(nel[t]['radio'][0], trad_min), min(nel[t]['radio'][1], trad_max)
