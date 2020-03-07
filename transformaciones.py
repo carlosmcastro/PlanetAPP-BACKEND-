@@ -61,8 +61,12 @@ def radio(t, a, b):
 #####################################################################################################
 #####################################################################################################
 
-
+#interval('estrella') #min y max de masa en la tabla.
+#interval('estrella', 15.4) #min y max de radio en base a la masa de la estrella(15.4).
+#interval('planeta', aux_mass=15.4) #min y max de masa en base a la masa de su estrella.
+#interval('planeta', 10) #min y max de radio en base a la masa del planeta(10)
 def interval(t, masa=[], aux_mass=[]):
+	#leemos los limites naturales.
 	with open(LIMITES_PL_REALISTA, 'rb') as f:
 		nel = pickle.load(f)
 	if aux_mass:

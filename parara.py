@@ -44,11 +44,8 @@ def rellenar_phy_nan():
 
 	data_.to_csv(ASTRO_DATA, index=False)	#Se guarda sin indices.
 	
+#Busca los datos necesarios para evaluar los intervalos limitantes de masa y radio.
 def limites():
-
-		#para los intervalos se multiplica la masa de la estrella por a_max y a_min.
-		#luego se escoge entre los minimos de masa al maximo entre a_min*masaestrellaescogida y masa_planeta_min.
-		#idem con el maximo.
 		c_st_pl = data[EQV['masa_planeta']]/ data[EQV['masa_estrella']]
 		
 		lim_st_pl = {'estrella': 
