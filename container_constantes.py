@@ -105,7 +105,8 @@ EQUIVALENCIAS = {'clasificacion_estrella': 'st_spstr', 'instalacion_descubrimien
 		  'radio_estrella': 'st_rad', 'ascencion_recta': 'ra',
 		  'declinacion': 'dec', 'densidad_estrella': 'st_dens',
 		  'luminosidad_estrella': 'st_lum', 'metodo_descubrimiento_planeta': 'pl_discmethod',
-		  'tiempo_periastron': 'pl_orbtper'}
+		  'tiempo_periastron': 'pl_orbtper', 'temperatura_estrella': 'st_teff',
+		  'temperatura_planeta': 'pl_eqt'}
 		  
 #Clasificación de estrellas Morgan_Kennan:				
 MORGAN_KENNAN = {'letras': {'W': "Wolf–Rayet", 

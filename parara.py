@@ -1,6 +1,7 @@
 #encoding: utf-8
 
 from container_constantes import D, ASTRO_DATA, EQUIVALENCIAS, TYP_DATOS, CONST_DMR
+from transformaciones import lum_calc
 #from math import pi
 #from decimal import Decimal as D
 import pandas as pd
@@ -54,7 +55,13 @@ def rellenar_phy_nan():
 					o(typ, data.at[i , prop_phy[(v+1)%3]], 
 						data.at[i , prop_phy[(v+2)%3]]),6).normalize()
 			#redondea a 6 digitos decimales, y normaliza, para eliminar los ceros de exceso.
-		data.to_csv(ASTRO_DATA, index=False)	#Se guarda sin indices.
+
+	#Completamos los datos de luminosidad estelar.
+	lumen, t, r =EQUIVALENCIAS['luminosidad_estrella'], EQUIVALENCIAS['temperatura_estrella'] ,EQUIVALENCIAS['radio_estrella']
+	for l in data[data[lumen].isnull()&data[t].notna()&data[r].notna()].index:
+		data.at[l, lumen] = round(lum_calc(data.at[l, t], data.at[l, r]).log10(), 6).normalize()
+
+	data.to_csv(ASTRO_DATA, index=False)	#Se guarda sin indices.
 
 
 	
