@@ -131,7 +131,7 @@ TEMPERATURA_SOLAR = '5778' #Kelvins
 
 #Datos basado en cambios de unidades a kg, y m.
 CONSTANTE_VOLUMEN_INV = D(3/4)/D(str(pi))
-TYP_DATOS = ('Estrella', 'Planeta')
+TYP_DATOS = ('estrella', 'planeta')
 MANTISA_MASA = ('1.989', '1.898')	#Sol, Jupiter.
 MANTISA_RADIO = ('6.957', '6.371')	#Sol, Tierra.
 ORDEN_MAG = (3,6)
