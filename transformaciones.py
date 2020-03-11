@@ -68,18 +68,18 @@ def radio(t, a, b):
 def interval(t, masa=[], aux_mass=[]):
 	#leemos los limites naturales.
 	with open(LIMITES_PL_REALISTA, 'rb') as f:
-		nel = pickle.load(f)
+		g_limit = pickle.load(f)
 	if aux_mass:
-		tmass_min = nel[t]['proporcional_masa'][0]*aux_mass
-		tmass_max = nel[t]['proporcional_masa'][1]*aux_mass
-		return max(nel[t]['masa'][0], tmass_min), min(nel[t]['masa'][1], tmass_max)
+		tmass_min = g_limit[t]['proporcional_masa'][0]*aux_mass
+		tmass_max = g_limit[t]['proporcional_masa'][1]*aux_mass
+		return max(g_limit[t]['masa'][0], tmass_min), min(g_limit[t]['masa'][1], tmass_max)
 	if masa:
 		#recordar que la densidad es inversamente proporcional al radio.
-		trad_min = radio(t, nel[t]['densidad'][1], masa)
-		trad_max = radio(t, nel[t]['densidad'][0], masa)
-		return max(nel[t]['radio'][0], trad_min), min(nel[t]['radio'][1], trad_max)
+		trad_min = radio(t, g_limit[t]['densidad'][1], masa)
+		trad_max = radio(t, g_limit[t]['densidad'][0], masa)
+		return max(g_limit[t]['radio'][0], trad_min), min(g_limit[t]['radio'][1], trad_max)
 	else:
-		return nel[t]['masa']
+		return g_limit[t]['masa']
 	
 		
 	
